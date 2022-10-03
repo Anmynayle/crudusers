@@ -7,11 +7,15 @@ const crudRouter = require('./crud/users.router')
 app.use(express.json());
 
 app.get('/', (req,res)=>{
-    res.status(200).json({message:'Server Ok'});
+    res.status(200).json({
+        pag_Menu:"http://127.0.0.1:9000/crud",
+        message:'Server Ok'
+            
+    });
 })
 
 
 app.use("/", crudRouter)
-app.listen(8000, ()=>{
-    console.log('Server started at puerto 8000');
+app.listen(9000, ()=>{
+    console.log('Server started at puerto 9000');
 });
